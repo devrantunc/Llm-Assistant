@@ -1,0 +1,57 @@
+:root{
+  
+  --bg-1:#7b1326;                 /* üst-sol bordo */
+  --bg-2:#f5ba5a;                 /* sağ-alt altın */
+  --vignette-1:rgba(123,19,38,.72);   /* bordo vinyet */
+  --vignette-2:rgba(140, 18, 18, 0.658);  /* altın vinyet */
+  --glow-gold:#810808;                /* ekstra altın parıltı */
+
+  --glass-fill:rgba(255,255,255,.12);
+  --glass-stroke:rgba(255,255,255,.38);
+  --text:#ffeede;
+  --text-muted:rgba(255,255,255,.9);
+
+  --radius:24px;
+  --shadow:0 10px 30px rgba(0,0,0,.28);
+}
+
+*{ box-sizing:border-box; }
+
+body{
+  margin:0;
+  font-family:"Segoe UI",sans-serif;
+  background:
+    /* sağ-alt güçlü altın parıltı (bordoyu bastırır) */
+    radial-gradient(920px 680px at 98% 96%, var(--glow-gold) 0%, transparent 62%),
+    /* merkez-alt yumuşak altın parıltı */
+    radial-gradient(900px 620px at 50% 80%, rgba(249,215,109,.38) 0%, transparent 60%),
+    /* sol-üst bordo vinyet */
+    radial-gradient(1100px 720px at 20% 0%, var(--vignette-1) 0%, transparent 60%),
+    /* sağ-alt altın vinyet */
+    radial-gradient(1200px 820px at 100% 100%, var(--vignette-2) 0%, transparent 55%),
+    /* ana degrade */
+    linear-gradient(135deg, var(--bg-1), var(--bg-2));
+  background-attachment: fixed;
+  color:var(--text);
+  height:100vh;
+  overflow:hidden;
+}
+.app{
+  display:flex;
+  height:100vh;
+  background: var(--glass-fill);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border: 1.2px solid var(--glass-stroke);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 26px 24px;
+  gap: 22px;
+}
+
+.typing-indicator{
+  font-style:italic;
+  font-size:14px;
+  margin-top:8px;
+  color:var(--text-muted);
+}

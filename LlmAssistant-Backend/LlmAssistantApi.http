@@ -1,0 +1,6 @@
+@LlmAssistantApi_HostAddress = http://localhost:5256
+
+GET {{LlmAssistantApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,162 @@
+.sidebar{
+  width:260px;
+  height:100%;
+  padding:20px;
+  box-sizing:border-box;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  overflow-y:auto;
+
+  /* Cam bordo panel (referans tonları) */
+  background: linear-gradient(180deg, rgba(129, 8, 8, 0.99), rgba(255,255,255,.10));
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  border:1.2px solid rgba(255,255,255,.32);
+  border-radius:20px;
+  box-shadow: 0 10px 26px rgba(28, 25, 25, 0.18);
+  transition: box-shadow .2s ease;
+}
+.sidebar:hover{ box-shadow:0 12px 30px rgba(0,0,0,.22); }
+
+
+.sidebar h2{
+  margin:2px 0 12px;
+  font-size:32px;
+  font-weight:800;
+  letter-spacing:.3px;
+  color:#ffe6ad;                  /* kremsi altın yazı */
+  text-shadow:0 1px 0 rgba(0,0,0,.15);
+}
+
+
+.mode-select-sidebar{
+  margin-bottom:8px;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  font-size:14px;
+}
+.mode-select-sidebar label{
+  color:#ffe6ad;
+  font-weight:700;
+  text-shadow:0 1px 0 rgba(0,0,0,.12);
+}
+.mode-select-sidebar select{
+  padding:10px 12px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.28);
+  background:rgba(255,255,255,.92);
+  color:#7b1326;                  /* bordo metin (App.css ile uyumlu) */
+  outline:none;
+  transition: border-color .15s, box-shadow .15s, background .15s;
+}
+.mode-select-sidebar select:focus{
+  border-color:#ffd75a;
+  box-shadow:0 0 0 3px rgba(255,215,0,.22);
+  background:#fff;
+}
+
+/* Arama kutusu */
+.sidebar input{
+  padding:11px 12px;
+  margin:6px 0 12px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.26);
+  background:rgba(255,255,255,.92);
+  color:#7b1326;
+  outline:none;
+  transition: border-color .15s, box-shadow .15s, background .15s;
+}
+.sidebar input::placeholder{ color:rgb(128, 18, 18); opacity:.8; }
+.sidebar input:focus{
+  border-color:#ffd75a;
+  box-shadow:0 0 0 3px rgba(255,215,0,.22);
+  background:#fff;
+}
+
+.chat-list{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  flex:1;
+}
+.chat-list .empty-state{
+  color:#7b1326;
+  background:rgba(255, 217, 0, 0.344);
+  border:1px dashed rgba(255,255,255,.3);
+  border-radius:12px;
+  padding:10px 12px;
+  text-align:center;
+}
+
+/* Sohbet item */
+.chat-item{
+  background: rgba(255,215,0,.12);
+  padding:10px 12px;
+  border-radius:12px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border:1px solid rgba(255,255,255,.26);
+  cursor:pointer;
+  transition: background .18s, box-shadow .18s, transform .06s;
+}
+.chat-item:hover{
+  background: rgba(255,215,0,.18);
+  box-shadow:0 2px 8px rgba(0,0,0,.12);
+}
+.chat-item.active{
+  background: rgba(255,215,0,.26);
+  border-color:#ffd75a;
+  box-shadow:0 0 0 3px rgba(255,215,0,.22);
+}
+
+.chat-title{
+  flex:1;
+  margin-right:8px;
+  font-size:14px;
+  color:#7b1326;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+/* Düzenle / sil butonları */
+.chat-buttons{ display:flex; gap:6px; }
+.chat-buttons button{
+  background:none;
+  border:none;
+  cursor:pointer;
+  font-size:16px;
+  color:#7b1326;
+  opacity:.7;
+  border-radius:8px;
+  padding:4px 6px;
+  transition: opacity .12s, background .12s;
+}
+.chat-buttons button:hover{
+  opacity:1;
+  background: rgba(255,215,0,.18);
+}
+
+.new-chat-btn{
+  margin-top:12px;
+  padding:12px 16px;
+  border:none;
+  border-radius:12px;
+  background: linear-gradient(180deg, #ffe27a, #ffd24a);
+  color:#5c3a00;
+  font-weight:800;
+  cursor:pointer;
+  box-shadow: 0 6px 16px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.75);
+}
+.new-chat-btn:active{ transform: translateY(1px); }
+
+.sidebar{ scrollbar-width: thin; scrollbar-color: rgba(255,255,255,.35) transparent; }
+.sidebar::-webkit-scrollbar{ width: 8px; }
+.sidebar::-webkit-scrollbar-thumb{ background: rgba(255,255,255,.35); border-radius: 8px; }
+.sidebar::-webkit-scrollbar-track{ background: transparent; }
